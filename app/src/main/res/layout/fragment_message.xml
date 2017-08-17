@@ -1,19 +1,48 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.lightingcontour.onlyvoice.MessageFragment">
 
-    <com.lightingcontour.onlyvoice.CircleImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/pos0"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="90dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/test_to_delete"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="-"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/test_to_add"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="50dp"
+            android:text="+"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/test_to_delete" />
+
+        <TextView
+            android:id="@+id/test_message_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="3"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/test_to_add"
+            app:layout_constraintLeft_toLeftOf="@+id/test_to_delete"
+            app:layout_constraintRight_toRightOf="@+id/test_to_delete"
+            app:layout_constraintTop_toBottomOf="@+id/test_to_delete" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

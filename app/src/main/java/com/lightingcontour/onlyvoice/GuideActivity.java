@@ -30,7 +30,7 @@ public class GuideActivity extends AppCompatActivity {
     private View positionView;
     private ViewGroup.LayoutParams positionParams;
     //状态栏高度.
-    int statusBarHeight = -1;
+    public int statusBarHeight = -1;//单位Px.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
