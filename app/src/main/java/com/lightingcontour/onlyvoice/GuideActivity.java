@@ -11,18 +11,26 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 public class GuideActivity extends AppCompatActivity {
 
+    private static final String TAG = "GuideActivity";
+
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private NavigationView navigationView;
     private View navigationHeadView;
+    private View positionView;
+    private ViewGroup.LayoutParams positionParams;
+    //状态栏高度.
+    int statusBarHeight = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +87,18 @@ public class GuideActivity extends AppCompatActivity {
                 Toast.makeText(GuideActivity.this, "点击了navigationHeadView", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //获取状态栏高度，调整View高度.
+        int resourceId = getResources().getIdentifier("status_bar_height","dimen","android");
+        if (resourceId > 0)
+        {
+            statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+        }
+        Log.i(TAG,"状态栏高度为:" + statusBarHeight);
+        positionView = findViewById(R.id.position_view);
+        positionParams = positionView.getLayoutParams();
+        positionParams.height = statusBarHeight;
+        positionView.setLayoutParams(positionParams);
 
         //设置Item的点击监听.
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

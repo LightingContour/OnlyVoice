@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * 已弃用Fragment
  */
 public class GuideFragment extends Fragment {
 

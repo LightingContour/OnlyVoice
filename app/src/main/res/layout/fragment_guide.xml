@@ -9,13 +9,7 @@
 
     <ImageView
         android:id="@+id/guideImage"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/pos0"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="32dp" />
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/pos0"> </ImageView>
 </android.support.constraint.ConstraintLayout>
